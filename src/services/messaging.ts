@@ -1,7 +1,7 @@
 import { MessagingProtocolo } from './interfaces/messagins-protocolo';
 export class Messaging implements MessagingProtocolo {
   ///
-  sendMessage(): void {
-    console.log('Mensagem enviada: ');
+  sendMessage(msg: string): void {
+    console.log('Mensagem enviada:', msg);
   }
 }
