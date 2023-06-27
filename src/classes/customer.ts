@@ -17,6 +17,9 @@ export class IndividualCustomer
     this.cpf = cpf;
   }
   geIDN(): string {
+    throw new Error('Method not implemented.');
+  }
+  getIDN(): string {
     return this.cpf;
   }
 
@@ -35,7 +38,7 @@ export class EnterpriseCustomer
     this.name = name;
     this.cnpj = cnpj;
   }
-  geIDN(): string {
+  getIDN(): string {
     return this.cnpj;
   }
 

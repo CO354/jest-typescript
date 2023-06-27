@@ -11,5 +11,5 @@ export interface EnterpriseCustomerProtocolo {
 
 export interface CustomerOrder {
   getName(): string;
-  geIDN(): string;
+  getIDN(): string;
 }
