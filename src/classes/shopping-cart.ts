@@ -1,6 +1,6 @@
 /*
 OPEN/CLOSED PRINCIPLE
-Entidade devem esta abertas para extensão, mas fechadas para modificação
+A Entidade devem esta abertas para extensão, mas fechadas para modificação
 
 Em poucas palavras isso significa que nao podemos modificar
 o nosso source-code
