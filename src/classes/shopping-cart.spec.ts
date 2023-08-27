@@ -32,7 +32,7 @@ const createSuitWithProduct = () => {
 };
 
 describe('ShoppingCart', () => {
-  it('should be an empty car when no product iss', () => {
+  it('should be an empty cart when no product iss', () => {
     const { sut } = createSut();
     expect(sut.isEmpty()).toBe(true);
   });
@@ -63,5 +63,19 @@ describe('ShoppingCart', () => {
     expect(sut.item.length).toBe(1);
     sut.removeItem(0);
     expect(sut.isEmpty()).toBe(true);
+  });
+
+  it('should call discount.calculate when once totalWithDiscount is called', () => {
+    const { sut, discountMock } = createSuitWithProduct();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDiscount();
+    expect(discountMockSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call discount with total price  when  totalWithDiscount is called', () => {
+    const { sut, discountMock } = createSuitWithProduct();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDiscount();
+    expect(discountMockSpy).toHaveBeenCalledWith(sut.total());
   });
 });
